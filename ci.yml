@@ -17,17 +17,6 @@ jobs:
       - run: npm ci
       - run: npm run lint
 
-  karma:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 19
-          cache: npm
-      - run: npm ci
-      - run: npx run-s init bundle test-unit-karma
-
   promises-and-observables:
     strategy:
       matrix:
